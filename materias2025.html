@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Cursada - Materias 2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1a1a1a',
+            secondary: '#333333',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Menú de navegación -->
+  <nav class="bg-primary text-white">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-tight">
+          <a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Mi Cursada</a>
+        </h1>
+        <ul class="flex flex-wrap gap-6 mt-4 md:mt-0">
+          <li><a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Inicio</a></li>
+          <li><a href="avisos.html" class="hover:text-gray-300 transition-colors duration-200">Avisos</a></li>
+          <li><a href="sobremi.html" class="hover:text-gray-300 transition-colors duration-200">Sobre mí</a></li>
+          <li><a href="materias2025.html" class="hover:text-gray-300 transition-colors duration-200">Materias 2025</a>
+          </li>
+          <li><a href="contacto.html" class="hover:text-gray-300 transition-colors duration-200">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8">Materias 2025 - Primer Cuatrimestre</h2>
+
+      <!-- Presenciales -->
+      <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h3 class="text-2xl font-semibold text-primary mb-4">Presenciales</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-semibold text-primary mb-2">Testing de Aplicaciones</h4>
+            <p class="text-gray-600">Lunes - 18:30 a 22:00</p>
+            <p class="text-gray-600 mt-2">Profesor: JUAN PEREZ</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-semibold text-primary mb-2">Ingeniería de Software</h4>
+            <p class="text-gray-600">Miercoles - 18:30 a 22:00</p>
+            <p class="text-gray-600 mt-2">Profesora: MARIA GONZALEZ</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Virtuales -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-2xl font-semibold text-primary mb-4">Virtuales</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-semibold text-primary mb-2">Diseño y Desarrollo Web</h4>
+            <p class="text-gray-600">Martes - 18:30 a 22:00</p>
+            <p class="text-gray-600 mt-2">Profesora: PATRICIA CARINA LITOVICIUS</p>
+            <div class="flex flex-col sm:flex-row gap-2 mt-2">
+              <a href="disenoDesarrolloWeb.html"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-md hover:bg-secondary transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Ver detalles
+              </a>
+            </div>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h4 class="font-semibold text-primary mb-2">Marketing</h4>
+            <p class="text-gray-600">Jueves - 18:30 a 22:00</p>
+            <p class="text-gray-600 mt-2">Profesora: MARIA MARTINEZ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-primary text-white py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm">&copy; 2025 Mi Cursada. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

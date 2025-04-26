@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Cursada - Inicio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1a1a1a',
+            secondary: '#333333',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+  <!-- Menú de navegación -->
+  <nav class="bg-primary text-white">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-tight">
+          <a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Mi Cursada</a>
+        </h1>
+        <ul class="flex flex-wrap gap-6 mt-4 md:mt-0">
+          <li><a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Inicio</a></li>
+          <li><a href="avisos.html" class="hover:text-gray-300 transition-colors duration-200">Avisos</a></li>
+          <li><a href="sobremi.html" class="hover:text-gray-300 transition-colors duration-200">Sobre mí</a></li>
+          <li><a href="materias2025.html" class="hover:text-gray-300 transition-colors duration-200">Materias 2025</a>
+          </li>
+          <li><a href="contacto.html" class="hover:text-gray-300 transition-colors duration-200">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8">Mis Materias</h2>
+
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Materia</th>
+              <th scope="col" class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Día y Horario
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Modalidad y Aula
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <!-- Materias -->
+
+            <tr class="hover:bg-gray-50 transition-colors duration-150">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Testing de Aplicaciones</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Lunes 18:30-22:00</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Presencial - Aula 349</td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors duration-150">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Diseño y Desarrollo Web</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Martes 18:30-22:00</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Virtual - Aula Virtual</td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors duration-150">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Ingeniería de Software</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Miercoles 18:30-22:00</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Presencial - Aula 805</td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors duration-150">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Marketing</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Jueves 18:30-22:00</td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Virtual - Aula Virtual</td>
+            </tr>
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-primary text-white py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm">&copy; 2025 Mi Cursada. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

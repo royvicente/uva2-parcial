@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Cursada - Sobre mí</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1a1a1a',
+            secondary: '#333333',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Menú de navegación -->
+  <nav class="bg-primary text-white">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-tight">
+          <a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Mi Cursada</a>
+        </h1>
+        <ul class="flex flex-wrap gap-6 mt-4 md:mt-0">
+          <li><a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Inicio</a></li>
+          <li><a href="avisos.html" class="hover:text-gray-300 transition-colors duration-200">Avisos</a></li>
+          <li><a href="sobremi.html" class="hover:text-gray-300 transition-colors duration-200">Sobre mí</a></li>
+          <li><a href="materias2025.html" class="hover:text-gray-300 transition-colors duration-200">Materias 2025</a>
+          </li>
+          <li><a href="contacto.html" class="hover:text-gray-300 transition-colors duration-200">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8">Sobre Mí</h2>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-xl shadow-md p-8">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <!-- Imagen de perfil -->
+          <div class="w-48 h-48 flex-shrink-0">
+            <img src="img/perfil.jpg" alt="Foto de perfil"
+              class="w-full h-full object-cover rounded-full border-4 border-primary shadow-md">
+          </div>
+
+          <!-- Información personal -->
+          <div class="flex-1">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Roy Vicente</h2>
+            <p class="text-xl text-primary mb-6">Licenciatura en Gestión de Tecnologías de la Información</p>
+
+            <div class="space-y-6">
+              <p class="text-gray-600 leading-relaxed">
+                Soy un estudiante apasionado por la tecnología y el desarrollo de software.
+                Actualmente me encuentro cursando la Licenciatura en Gestion de Tecnologias de la Informacion en UADE.
+              </p>
+
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h3 class="font-semibold text-primary mb-3">Intereses</h3>
+                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                  <li>Desarrollo web frontend y backend</li>
+                  <li>UX/UI</li>
+                  <li>Inteligencia Artificial y seguridad informática</li>
+                  <li>Desarrollo de aplicaciones móviles</li>
+                </ul>
+              </div>
+
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h3 class="font-semibold text-primary mb-3">Expectativas</h3>
+                <p class="text-gray-600 leading-relaxed">
+                  Mi objetivo es convertirme en un profesional en el desarrollo de software,
+                  capaz de crear soluciones tecnológicas innovadoras y de alta calidad.
+                  Espero que esta cursada me ayude a consolidar mis conocimientos en
+                  desarrollo web y diseño de interfaces.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-primary text-white py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm">&copy; 2025 Mi Cursada. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Cursada - Diseño y Desarrollo Web</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1a1a1a',
+            secondary: '#333333',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Menú de navegación -->
+  <nav class="bg-primary text-white">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-tight">
+          <a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Mi Cursada</a>
+        </h1>
+        <ul class="flex flex-wrap gap-6 mt-4 md:mt-0">
+          <li><a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Inicio</a></li>
+          <li><a href="avisos.html" class="hover:text-gray-300 transition-colors duration-200">Avisos</a></li>
+          <li><a href="sobremi.html" class="hover:text-gray-300 transition-colors duration-200">Sobre mí</a></li>
+          <li><a href="materias2025.html" class="hover:text-gray-300 transition-colors duration-200">Materias 2025</a>
+          </li>
+          <li><a href="contacto.html" class="hover:text-gray-300 transition-colors duration-200">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+      <!-- Título de la materia -->
+      <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Diseño y Desarrollo Web</h2>
+
+      <!-- Contenido de la materia en grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <!-- Columna izquierda -->
+        <div>
+          <!-- Fechas de exámenes -->
+          <div class="bg-gray-300 p-4 mb-6 rounded-lg h-40">
+            <h3 class="font-semibold mb-2">Fechas de exámenes</h3>
+            <ul class="list-disc pl-5">
+              <li>Primer parcial: 29/04/2025</li>
+              <li>Segundo parcial: 24/06/2025</li>
+              <li>Recuperatorio: 22/07/2025</li>
+            </ul>
+          </div>
+
+          <!-- Bibliografía -->
+          <div class="bg-gray-300 p-4 rounded-lg h-40">
+            <h3 class="font-semibold mb-2">Bibliografía</h3>
+            <ul class="list-disc pl-5">
+              <li>
+                HTML5 Pocket Reference Quick, Comprehensive, Indispensable (Pocket Reference (O'Reilly)). 5ta. Ed.
+              </li>
+              <li>
+                <a href="https://www.w3schools.com/">https://www.w3schools.com/</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Columna derecha - Actividades UVAs -->
+        <div class="bg-gray-300 p-4 rounded-lg">
+          <h3 class="font-semibold mb-4">Actividades UVAs</h3>
+
+          <!-- UVA 1 -->
+          <div class="bg-white p-4 rounded shadow-sm mb-4">
+            <h4 class="font-medium text-gray-800 border-b pb-2 mb-3">UVA 1</h4>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <!-- Ejercicios UVA 1 -->
+              <div>
+                <h5 class="font-medium text-sm text-gray-600 mb-2">Ejercicios</h5>
+                <ul class="space-y-2">
+                  <li>
+                    <a href="https://royvicente.github.io/uva1-html-introduccion/" target="_blank"
+                      class="text-sm text-primary hover:underline">
+                      Ejercicio individual - HTML Introducción
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://royvicente.github.io/uva1-html-etiquetas/" target="_blank"
+                      class="text-sm text-primary hover:underline">
+                      Ejercicio individual - HTML Etiquetas
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://royvicente.github.io/uva1-ejercicio-integrador/" target="_blank"
+                      class="text-sm text-primary hover:underline">
+                      Ejercicio individual - HTML Integrador
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Repositorios UVA 1 -->
+              <div>
+                <h5 class="font-medium text-sm text-gray-600 mb-2">Repositorios</h5>
+                <ul class="space-y-2">
+                  <li>
+                    <a href="https://github.com/royvicente/uva1-html-introduccion" target="_blank"
+                      class="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                      Repositorio - HTML Introducción
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/royvicente/uva1-html-etiquetas" target="_blank"
+                      class="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                      Repositorio - HTML Etiquetas
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/royvicente/uva1-ejercicio-integrador" target="_blank"
+                      class="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                      Repositorio - HTML Integrador
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- UVA 2 -->
+          <div class="bg-white p-4 rounded shadow-sm">
+            <h4 class="font-medium text-gray-800 border-b pb-2 mb-3">UVA 2</h4>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <!-- Ejercicios UVA 2 -->
+              <div>
+                <h5 class="font-medium text-sm text-gray-600 mb-2">Ejercicios</h5>
+                <ul class="space-y-2">
+                  <li>
+                    <a href="https://royvicente.github.io/uva2-formato-texto/" target="_blank"
+                      class="text-sm text-primary hover:underline">
+                      Ejercicio individual - Formato de texto
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://royvicente.github.io/uva2-formato-cajas/" target="_blank"
+                      class="text-sm text-primary hover:underline">
+                      Ejercicio individual - Formato de caja
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://royvicente.github.io/uva2-unidades-de-medida/" target="_blank"
+                      class="text-sm text-primary hover:underline">
+                      Ejercicio individual - Unidad de medida
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://royvicente.github.io/uva2-grid-flexbox/" target="_blank"
+                      class="text-sm text-primary hover:underline">
+                      Ejercicio individual - Grid y Flexbox
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Repositorios UVA 2 -->
+              <div>
+                <h5 class="font-medium text-sm text-gray-600 mb-2">Repositorios</h5>
+                <ul class="space-y-2">
+                  <li>
+                    <a href="https://github.com/royvicente/uva2-formato-texto" target="_blank"
+                      class="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                      Repositorio - Formato de texto
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/royvicente/uva2-formato-cajas" target="_blank"
+                      class="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                      Repositorio - Formato de caja
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/royvicente/uva2-unidades-de-medida" target="_blank"
+                      class="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                      Repositorio - Unidad de medida
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/royvicente/uva2-grid-flexbox" target="_blank"
+                      class="inline-flex items-center gap-1 text-sm text-primary hover:underline">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                      Repositorio - Grid y Flexbox
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Información del curso -->
+      <div class="bg-gray-300 p-4 rounded-lg text-center">
+        <p>Curso: 15130 / Profesora: Patricia Litovicius</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-primary text-white py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm">&copy; 2025 Mi Cursada. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

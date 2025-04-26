@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Cursada - Avisos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1a1a1a',
+            secondary: '#333333',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+  <!-- Menú de navegación -->
+  <nav class="bg-primary text-white">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-tight">
+          <a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Mi Cursada</a>
+        </h1>
+        <ul class="flex flex-wrap gap-6 mt-4 md:mt-0">
+          <li><a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Inicio</a></li>
+          <li><a href="avisos.html" class="hover:text-gray-300 transition-colors duration-200">Avisos</a></li>
+          <li><a href="sobremi.html" class="hover:text-gray-300 transition-colors duration-200">Sobre mí</a></li>
+          <li><a href="materias2025.html" class="hover:text-gray-300 transition-colors duration-200">Materias 2025</a>
+          </li>
+          <li><a href="contacto.html" class="hover:text-gray-300 transition-colors duration-200">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8">Avisos Importantes</h2>
+
+      <div class="space-y-6">
+        <!-- Aviso 1 -->
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-primary mb-2">Inicio de Clases</h3>
+              <p class="text-gray-600">Las clases del primer cuatrimestre comenzarán el 03 de marzo. Los horarios se
+                encuentran en el aula virtual.</p>
+              <p class="text-sm text-gray-500 mt-2">Publicado: 01/03/2025</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aviso 2 -->
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-primary mb-2">Material de Estudio</h3>
+              <p class="text-gray-600">El material de estudio para todas las materias ya está disponible en Webcampus.
+                Recuerden descargarlo antes del inicio de clases.</p>
+              <p class="text-sm text-gray-500 mt-2">Publicado: 28/02/2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-primary text-white py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm">&copy; 2025 Mi Cursada. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

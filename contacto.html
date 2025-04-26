@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Cursada - Contacto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1a1a1a',
+            secondary: '#333333',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Menú de navegación -->
+  <nav class="bg-primary text-white">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-tight">
+          <a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Mi Cursada</a>
+        </h1>
+        <ul class="flex flex-wrap gap-6 mt-4 md:mt-0">
+          <li><a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Inicio</a></li>
+          <li><a href="avisos.html" class="hover:text-gray-300 transition-colors duration-200">Avisos</a></li>
+          <li><a href="sobremi.html" class="hover:text-gray-300 transition-colors duration-200">Sobre mí</a></li>
+          <li><a href="materias2025.html" class="hover:text-gray-300 transition-colors duration-200">Materias 2025</a>
+          </li>
+          <li><a href="contacto.html" class="hover:text-gray-300 transition-colors duration-200">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8">Contacto</h2>
+
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <form class="space-y-6">
+          <!-- Campo Nombre -->
+          <div>
+            <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">
+              Nombre
+            </label>
+            <input type="text" id="nombre" name="nombre"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+          </div>
+
+          <!-- Campo Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+              Correo electrónico
+            </label>
+            <input type="email" id="email" name="email"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+          </div>
+
+          <!-- Campo Asunto -->
+          <div>
+            <label for="asunto" class="block text-sm font-medium text-gray-700 mb-1">
+              Asunto
+            </label>
+            <input type="text" id="asunto" name="asunto"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+          </div>
+
+          <!-- Campo Mensaje -->
+          <div>
+            <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">
+              Mensaje
+            </label>
+            <textarea id="mensaje" name="mensaje" rows="4"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"></textarea>
+          </div>
+
+          <!-- Botón de envío -->
+          <div class="pt-4">
+            <button type="submit"
+              class="w-full bg-primary text-white py-2 px-4 rounded-md hover:bg-secondary transition-colors duration-200">
+              Enviar mensaje
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-primary text-white py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm">&copy; 2025 Mi Cursada. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
