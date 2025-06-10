@@ -45,42 +45,56 @@
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold text-gray-800 mb-8">Contacto</h2>
 
+      <!-- Mensaje de éxito (oculto por defecto) -->
+      <div id="mensaje-exito" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
+        <p id="texto-exito"></p>
+      </div>
+
+      <!-- Mensaje de error (oculto por defecto) -->
+      <div id="mensaje-error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
+        <p id="texto-error"></p>
+      </div>
+
       <div class="bg-white rounded-xl shadow-md p-6">
-        <form class="space-y-6">
+        <form id="formulario-contacto" class="space-y-6">
           <!-- Campo Nombre -->
           <div>
             <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">
-              Nombre
+              Nombre *
             </label>
-            <input type="text" id="nombre" name="nombre"
+            <input type="text" id="nombre" name="nombre" required
               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+            <div id="error-nombre" class="hidden text-red-600 text-sm mt-1"></div>
           </div>
 
           <!-- Campo Email -->
           <div>
             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
-              Correo electrónico
+              Correo electrónico *
             </label>
-            <input type="email" id="email" name="email"
+            <input type="email" id="email" name="email" required
               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+            <div id="error-email" class="hidden text-red-600 text-sm mt-1"></div>
           </div>
 
           <!-- Campo Asunto -->
           <div>
             <label for="asunto" class="block text-sm font-medium text-gray-700 mb-1">
-              Asunto
+              Asunto *
             </label>
-            <input type="text" id="asunto" name="asunto"
+            <input type="text" id="asunto" name="asunto" required
               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+            <div id="error-asunto" class="hidden text-red-600 text-sm mt-1"></div>
           </div>
 
           <!-- Campo Mensaje -->
           <div>
             <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">
-              Mensaje
+              Mensaje *
             </label>
-            <textarea id="mensaje" name="mensaje" rows="4"
+            <textarea id="mensaje" name="mensaje" rows="4" required
               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"></textarea>
+            <div id="error-mensaje" class="hidden text-red-600 text-sm mt-1"></div>
           </div>
 
           <!-- Botón de envío -->
@@ -100,6 +114,163 @@
       <p class="text-sm">&copy; 2025 Mi Cursada. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script>
+    // Función para validar email
+    function validarEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
+
+    // Función para mostrar mensaje de error
+    function mostrarError(campo, mensaje) {
+      const errorElement = document.getElementById(`error-${campo}`);
+      errorElement.textContent = mensaje;
+      errorElement.classList.remove('hidden');
+      
+      // Agregar borde rojo al input
+      const inputElement = document.getElementById(campo);
+      inputElement.classList.add('border-red-500');
+    }
+
+    // Función para ocultar mensaje de error
+    function ocultarError(campo) {
+      const errorElement = document.getElementById(`error-${campo}`);
+      errorElement.classList.add('hidden');
+      
+      // Quitar borde rojo del input
+      const inputElement = document.getElementById(campo);
+      inputElement.classList.remove('border-red-500');
+    }
+
+    // Función para mostrar mensaje de éxito
+    function mostrarExito(nombre) {
+      const mensajeExito = document.getElementById('mensaje-exito');
+      const textoExito = document.getElementById('texto-exito');
+      const mensajeError = document.getElementById('mensaje-error');
+      
+      // Ocultar mensaje de error si existe
+      mensajeError.classList.add('hidden');
+      
+      // Mostrar mensaje de éxito
+      textoExito.textContent = `¡Gracias por tu contacto ${nombre}! En breve le estaré respondiendo.`;
+      mensajeExito.classList.remove('hidden');
+      
+      // Limpiar el formulario
+      document.getElementById('formulario-contacto').reset();
+    }
+
+    // Función para mostrar mensaje de error general
+    function mostrarErrorGeneral(mensaje) {
+      const mensajeError = document.getElementById('mensaje-error');
+      const textoError = document.getElementById('texto-error');
+      const mensajeExito = document.getElementById('mensaje-exito');
+      
+      // Ocultar mensaje de éxito si existe
+      mensajeExito.classList.add('hidden');
+      
+      // Mostrar mensaje de error
+      textoError.textContent = mensaje;
+      mensajeError.classList.remove('hidden');
+    }
+
+    // Función para validar el formulario
+    function validarFormulario() {
+      let errores = [];
+      let camposValidos = true;
+
+      // Obtener valores de los campos
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const asunto = document.getElementById('asunto').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+
+      // Ocultar todos los errores previos
+      ocultarError('nombre');
+      ocultarError('email');
+      ocultarError('asunto');
+      ocultarError('mensaje');
+
+      // Validar nombre
+      if (!nombre) {
+        mostrarError('nombre', 'El nombre es obligatorio');
+        errores.push('El nombre es obligatorio');
+        camposValidos = false;
+      } else if (nombre.length < 2) {
+        mostrarError('nombre', 'El nombre debe tener al menos 2 caracteres');
+        errores.push('El nombre debe tener al menos 2 caracteres');
+        camposValidos = false;
+      }
+
+      // Validar email
+      if (!email) {
+        mostrarError('email', 'El correo electrónico es obligatorio');
+        errores.push('El correo electrónico es obligatorio');
+        camposValidos = false;
+      } else if (!validarEmail(email)) {
+        mostrarError('email', 'Por favor ingrese un correo electrónico válido');
+        errores.push('Por favor ingrese un correo electrónico válido');
+        camposValidos = false;
+      }
+
+      // Validar asunto
+      if (!asunto) {
+        mostrarError('asunto', 'El asunto es obligatorio');
+        errores.push('El asunto es obligatorio');
+        camposValidos = false;
+      } else if (asunto.length < 5) {
+        mostrarError('asunto', 'El asunto debe tener al menos 5 caracteres');
+        errores.push('El asunto debe tener al menos 5 caracteres');
+        camposValidos = false;
+      }
+
+      // Validar mensaje
+      if (!mensaje) {
+        mostrarError('mensaje', 'El mensaje es obligatorio');
+        errores.push('El mensaje es obligatorio');
+        camposValidos = false;
+      } else if (mensaje.length < 10) {
+        mostrarError('mensaje', 'El mensaje debe tener al menos 10 caracteres');
+        errores.push('El mensaje debe tener al menos 10 caracteres');
+        camposValidos = false;
+      }
+
+      return { camposValidos, nombre, errores };
+    }
+
+    // Event listener para el formulario
+    document.getElementById('formulario-contacto').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const validacion = validarFormulario();
+      
+      if (validacion.camposValidos) {
+        // Si todos los campos son válidos, mostrar mensaje de éxito
+        mostrarExito(validacion.nombre);
+      } else {
+        // Si hay errores, mostrar mensaje de error general
+        const mensajeError = 'Por favor corrija los siguientes errores:\n' + validacion.errores.join('\n');
+        mostrarErrorGeneral('Por favor corrija los errores indicados en el formulario.');
+      }
+    });
+
+    // Event listeners para limpiar errores cuando el usuario empiece a escribir
+    document.getElementById('nombre').addEventListener('input', function() {
+      ocultarError('nombre');
+    });
+
+    document.getElementById('email').addEventListener('input', function() {
+      ocultarError('email');
+    });
+
+    document.getElementById('asunto').addEventListener('input', function() {
+      ocultarError('asunto');
+    });
+
+    document.getElementById('mensaje').addEventListener('input', function() {
+      ocultarError('mensaje');
+    });
+  </script>
 </body>
 
 </html>
