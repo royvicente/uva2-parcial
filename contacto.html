@@ -18,24 +18,35 @@
       }
     }
   </script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="bg-gray-50 min-h-screen flex flex-col">
   <!-- Menú de navegación -->
   <nav class="bg-primary text-white">
     <div class="container mx-auto px-4 py-3">
-      <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="flex flex-row items-center justify-between w-full">
+        <!-- Logo a la izquierda -->
         <h1 class="text-2xl font-bold tracking-tight">
           <a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Mi Cursada</a>
         </h1>
-        <ul class="flex flex-wrap gap-6 mt-4 md:mt-0">
+        <!-- Menú centrado -->
+        <ul class="flex flex-wrap gap-6 mx-auto">
           <li><a href="index.html" class="hover:text-gray-300 transition-colors duration-200">Inicio</a></li>
           <li><a href="avisos.html" class="hover:text-gray-300 transition-colors duration-200">Avisos</a></li>
           <li><a href="sobremi.html" class="hover:text-gray-300 transition-colors duration-200">Sobre mí</a></li>
-          <li><a href="materias2025.html" class="hover:text-gray-300 transition-colors duration-200">Materias 2025</a>
-          </li>
+          <li><a href="materias2025.html" class="hover:text-gray-300 transition-colors duration-200">Materias 2025</a></li>
           <li><a href="contacto.html" class="hover:text-gray-300 transition-colors duration-200">Contacto</a></li>
         </ul>
+        <!-- Botones de modo a la derecha -->
+        <div class="flex items-center gap-2 bg-black bg-opacity-20 rounded-lg p-1 ml-4">
+          <button id="light-mode-btn" class="theme-btn active">
+            ☀️ Claro
+          </button>
+          <button id="dark-mode-btn" class="theme-btn">
+            🌙 Oscuro
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -116,6 +127,44 @@
   </footer>
 
   <script>
+    // Sistema de modo claro/oscuro
+    class ThemeManager {
+      constructor() {
+        this.lightBtn = document.getElementById('light-mode-btn');
+        this.darkBtn = document.getElementById('dark-mode-btn');
+        this.body = document.body;
+        
+        this.init();
+      }
+
+      init() {
+        // Cargar preferencia guardada
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        this.setTheme(savedTheme);
+        
+        // Event listeners
+        this.lightBtn.addEventListener('click', () => this.setTheme('light'));
+        this.darkBtn.addEventListener('click', () => this.setTheme('dark'));
+      }
+
+      setTheme(theme) {
+        if (theme === 'dark') {
+          this.body.classList.add('dark-mode');
+          this.body.classList.remove('light-mode');
+          this.lightBtn.classList.remove('active');
+          this.darkBtn.classList.add('active');
+        } else {
+          this.body.classList.add('light-mode');
+          this.body.classList.remove('dark-mode');
+          this.lightBtn.classList.add('active');
+          this.darkBtn.classList.remove('active');
+        }
+        
+        // Guardar preferencia
+        localStorage.setItem('theme', theme);
+      }
+    }
+
     // Función para validar email
     function validarEmail(email) {
       const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -238,37 +287,43 @@
       return { camposValidos, nombre, errores };
     }
 
-    // Event listener para el formulario
-    document.getElementById('formulario-contacto').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const validacion = validarFormulario();
-      
-      if (validacion.camposValidos) {
-        // Si todos los campos son válidos, mostrar mensaje de éxito
-        mostrarExito(validacion.nombre);
-      } else {
-        // Si hay errores, mostrar mensaje de error general
-        const mensajeError = 'Por favor corrija los siguientes errores:\n' + validacion.errores.join('\n');
-        mostrarErrorGeneral('Por favor corrija los errores indicados en el formulario.');
-      }
-    });
+    // Inicializar cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', () => {
+      // Inicializar sistema de temas
+      new ThemeManager();
 
-    // Event listeners para limpiar errores cuando el usuario empiece a escribir
-    document.getElementById('nombre').addEventListener('input', function() {
-      ocultarError('nombre');
-    });
+      // Event listener para el formulario
+      document.getElementById('formulario-contacto').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const validacion = validarFormulario();
+        
+        if (validacion.camposValidos) {
+          // Si todos los campos son válidos, mostrar mensaje de éxito
+          mostrarExito(validacion.nombre);
+        } else {
+          // Si hay errores, mostrar mensaje de error general
+          const mensajeError = 'Por favor corrija los siguientes errores:\n' + validacion.errores.join('\n');
+          mostrarErrorGeneral('Por favor corrija los errores indicados en el formulario.');
+        }
+      });
 
-    document.getElementById('email').addEventListener('input', function() {
-      ocultarError('email');
-    });
+      // Event listeners para limpiar errores cuando el usuario empiece a escribir
+      document.getElementById('nombre').addEventListener('input', function() {
+        ocultarError('nombre');
+      });
 
-    document.getElementById('asunto').addEventListener('input', function() {
-      ocultarError('asunto');
-    });
+      document.getElementById('email').addEventListener('input', function() {
+        ocultarError('email');
+      });
 
-    document.getElementById('mensaje').addEventListener('input', function() {
-      ocultarError('mensaje');
+      document.getElementById('asunto').addEventListener('input', function() {
+        ocultarError('asunto');
+      });
+
+      document.getElementById('mensaje').addEventListener('input', function() {
+        ocultarError('mensaje');
+      });
     });
   </script>
 </body>
